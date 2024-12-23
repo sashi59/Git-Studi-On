@@ -1,0 +1,96 @@
+.payment-success-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background: linear-gradient(to bottom, #4caf50, #2e7d32);
+    padding: 20px;
+  }
+  
+  .payment-success-card {
+    background: #fff;
+    border-radius: 10px;
+    padding: 20px 30px;
+    max-width: 400px;
+    width: 100%;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+    text-align: center;
+    animation: fadeIn 0.5s ease-in-out;
+  }
+  
+  .success-title {
+    font-size: 24px;
+    font-weight: bold;
+    color: #2e7d32;
+  }
+  
+  .success-message {
+    font-size: 18px;
+    margin: 10px 0;
+    color: #333;
+  }
+  
+  .highlight {
+    color: #4caf50;
+    font-weight: bold;
+  }
+  
+  .details-container {
+    margin: 20px 0;
+    text-align: left;
+  }
+  
+  .detail {
+    font-size: 16px;
+    margin-bottom: 10px;
+    color: #555;
+  }
+  
+  .redirect-btn {
+    background: #4caf50;
+    color: #fff;
+    font-size: 16px;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 20px;
+    cursor: pointer;
+    transition: background 0.3s ease;
+  }
+  
+  .redirect-btn:hover {
+    background: #388e3c;
+  }
+  
+  @media (max-width: 768px) {
+    .payment-success-card {
+      padding: 15px 20px;
+    }
+  
+    .success-title {
+      font-size: 20px;
+    }
+  
+    .success-message {
+      font-size: 16px;
+    }
+  
+    .detail {
+      font-size: 14px;
+    }
+  
+    .redirect-btn {
+      font-size: 14px;
+    }
+  }
+  
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+      transform: scale(0.9);
+    }
+    to {
+      opacity: 1;
+      transform: scale(1);
+    }
+  }
+  

@@ -1,0 +1,28 @@
+.profile {
+    
+    padding: 30px 40px;
+    border-radius: 10px;
+    box-shadow: 2px 4px 5px rgba(28, 27, 27, 0.1);
+    width: 30%;
+    margin: 185px auto;
+  
+    @media (max-width: 768px) {
+      padding: 10px;
+      width: 80%;
+      margin: 90px auto;
+    }
+  
+    .profile-info {
+      text-align: left;
+      margin-top: 15px;
+  
+      p {
+        margin-bottom: 10px;
+        color: #333;
+  
+        strong {
+          color: #032f61;
+        }
+      }
+    }
+  }

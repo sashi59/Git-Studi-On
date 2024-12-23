@@ -1,0 +1,12 @@
+{
+  "name": "git-studi-on",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "build": "npm install --prefix servers && npm install --prefix frontend && npm run build --prefix frontend",
+    "start": "npm run start --prefix servers"
+  },
+  "author": "",
+  "license": "ISC",
+  "description": ""
+}

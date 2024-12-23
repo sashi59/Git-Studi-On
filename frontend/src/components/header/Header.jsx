@@ -38,7 +38,7 @@ const Header = () => {
                 <a href="/">Home</a>
               </li>
               <li>
-                <a href="/task">Tasks</a>
+                <a href="/course">Course</a>
               </li>
               <li>
                 <a href="/about">About</a>
@@ -69,7 +69,7 @@ const Header = () => {
               
             </ul>
           </div>
-          <a className="btn btn-ghost text-3xl text-white">TASK ASSIGNER</a>
+          <a className="btn btn-ghost text-3xl text-white">Studi-On LMS</a>
         </div>
         <div className="navbar-end hidden lg:flex">
           <ul className="menu menu-horizontal px-1 text-white">
@@ -79,8 +79,8 @@ const Header = () => {
               </a>
             </li>
             <li>
-              <a className="text-2xl" href="/task">
-                Tasks
+              <a className="text-2xl" href="/course">
+                Course
               </a>
             </li>
             <li>

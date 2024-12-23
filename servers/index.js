@@ -3,6 +3,7 @@ import dotenv from "dotenv"
 import mongoose from 'mongoose';
 import Razorpay from "razorpay"
 import cors from "cors"
+import path from "path"
 
 import userRoute from "./routes/user.route.js"
 import courseRoute from "./routes/course.route.js"
@@ -29,6 +30,15 @@ app.use("/uploads", express.static("uploads"));
 app.use('/api/user', userRoute);
 app.use('/api/course', courseRoute);
 app.use('/api/admin', adminRoute);
+
+const __dirname = path.resolve();
+if (process.env.NODE_ENV === "production") {
+  app.use(express.static(path.join(__dirname, "../frontend/dist")));
+
+  app.get("*", (req, res) => {
+    res.sendFile(path.join(__dirname, "../frontend", "dist", "index.html"));
+  });
+}
 
 
 app.listen(port, ()=>{

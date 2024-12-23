@@ -19,8 +19,16 @@ import AdminDashboard from "./admin/AdminDashboard";
 import AdminCourses from "./admin/AdminCourses";
 import AdminUsers from "./admin/AdminUsers";
 import PaymentSuccess from "./pages/payment/PaymentSuccess";
+import axios from "axios";
 
-export const server = "http://localhost:5000"
+// Axios instance for base URL
+export const server = import.meta.env.MODE === "development" ? "http://localhost:5000" : "";
+// export const server = axios.create({
+//   baseURL: import.meta.env.MODE === "development" ? "http://localhost:5000" : "",
+//   headers: {
+//     "Content-Type": "application/json",
+//   },
+// });
 
 function App() {
   const { isAuth, user, loading } = UserData();
@@ -66,11 +74,14 @@ function App() {
               path="/course/lectures/:id"
               element={isAuth ? <SeeLectures user={user} /> : <Signin />}
             />
-            <Route path="/payment-success/:id" element={isAuth ? <PaymentSuccess user={user} /> : <Signin />}/>
+            <Route
+              path="/payment-success/:id"
+              element={isAuth ? <PaymentSuccess user={user} /> : <Signin />}
+            />
             <Route
               path="/admin/dashboard"
               element={
-                isAuth && user.role === "admin" ? (
+                isAuth && user?.role === "admin" ? (
                   <AdminDashboard user={user} />
                 ) : (
                   <Homepage />
@@ -80,7 +91,7 @@ function App() {
             <Route
               path="/admin/course"
               element={
-                isAuth && user.role === "admin" ? (
+                isAuth && user?.role === "admin" ? (
                   <AdminCourses user={user} />
                 ) : (
                   <Homepage />
@@ -90,14 +101,13 @@ function App() {
             <Route
               path="/admin/users"
               element={
-                isAuth && user.role === "admin" ? (
+                isAuth && user?.role === "admin" ? (
                   <AdminUsers user={user} />
                 ) : (
                   <Homepage />
                 )
               }
             />
-
             <Route path="/about" element={<About />} />
             <Route path="*" element={<div>Page not found</div>} />
           </Routes>

@@ -7,8 +7,8 @@ const Footer = () => {
         <a className="link link-hover" href="/">
           Home
         </a>
-        <a className="link link-hover" href="/task">
-          Tasks
+        <a className="link link-hover" href="/course">
+          Course
         </a>
         <a className="link link-hover" href="about">
           About

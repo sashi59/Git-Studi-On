@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { useNavigate, useParams } from "react-router-dom";
+import { data, useNavigate, useParams } from "react-router-dom";
 import { CourseData } from "../../context/CourseContext";
 import { server } from "../../App";
 import axios from "axios";
@@ -30,6 +30,7 @@ const CourseDescription = () => {
           },
         }
       );
+      // console.log("data razo", order);
 
       // Step 2: Razorpay options
       const options = {
@@ -41,8 +42,10 @@ const CourseDescription = () => {
         order_id: order.id, // Order ID from Razorpay response
 
         handler: async function (response) {
+          console.log("response", response)
           const { razorpay_order_id, razorpay_payment_id, razorpay_signature } =
             response;
+            console.log(" razorpay_order_id, razorpay_payment_id, razorpay_signature",  razorpay_order_id, razorpay_payment_id, razorpay_signature)
 
           try {
             // Step 3: Verify the payment

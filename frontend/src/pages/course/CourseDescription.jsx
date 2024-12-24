@@ -42,10 +42,10 @@ const CourseDescription = () => {
         order_id: order.id, // Order ID from Razorpay response
 
         handler: async function (response) {
-          console.log("response", response)
+          // console.log("response", response)
           const { razorpay_order_id, razorpay_payment_id, razorpay_signature } =
             response;
-            console.log(" razorpay_order_id, razorpay_payment_id, razorpay_signature",  razorpay_order_id, razorpay_payment_id, razorpay_signature)
+            // console.log(" razorpay_order_id, razorpay_payment_id, razorpay_signature",  razorpay_order_id, razorpay_payment_id, razorpay_signature)
 
           try {
             // Step 3: Verify the payment
